@@ -36,7 +36,9 @@ as routing keys in addition to the routing keys defined in the destination.
 Example usage:
 
 ```sh
-tail -F /var/log/some_log | python cat2queue.py -c cat2queue_config.json
+tail -F /var/log/some.log | python cat2queue.py -c cat2queue_config.json
+
+ssh somewhere tail -F /var/log/some.log | pv | python cat2queue.py -c cat2queue_config.json
 ```
 
 The MIT License
